@@ -1,22 +1,22 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: ConfeccionesAdler
+  site: 'https://beta.confeccionesadler.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: ''
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: confeccionesadler
+    template: '%s — confeccionesadler'
+  description: "Adler, Bienvenido a Adler, una nueva empresa de confianaza."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: confeccionesadler
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -34,7 +34,7 @@ i18n:
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 6
+    postsPerPage: 8
 
     post:
       isEnabled: true
@@ -51,6 +51,36 @@ apps:
     category:
       isEnabled: true
       pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    bordados:
+      isEnabled: true
+      pathname: 'bordados' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    contactanos:
+      isEnabled: true
+      pathname: 'contactanos' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    corteyconfeccion:
+      isEnabled: true
+      pathname: 'corteyconfeccion' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    quienessomos:
+      isEnabled: true
+      pathname: 'quienessomos' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+    
+    trabajos:
+      isEnabled: true
+      pathname: 'trabajos' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 

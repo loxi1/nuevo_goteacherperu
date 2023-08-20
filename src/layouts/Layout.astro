@@ -11,6 +11,8 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification  from "~/components/common/SiteVerification.astro"
 import Analytics  from "~/components/common/Analytics.astro"
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import Whatsaap from '~/components/widgets/Whatsaap.astro';
+import Modal from '~/components/widgets/Modal.astro';
 
 import { MetaData as MetaDataType } from '~/types';
 
@@ -33,9 +35,15 @@ const { language, textDirection } = I18N_CONFIG;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+	<script type="text/javascript">
+		emailjs.init('4Z1uuF9-3Cymg4roE')
+	</script>
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-default tracking-tight">
     <slot />
 
     <BasicScripts />
@@ -45,5 +53,57 @@ const { language, textDirection } = I18N_CONFIG;
         content-visibility: auto;
       }
     </style>
+	<Whatsaap />
+	<Modal />
   </body>
 </html>
+<style>
+	@font-face {
+		font-family: 'Archivo';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('~/assets/fonts/archivo.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Archivo';
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url('~/assets/fonts/archivo-semibold.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Archivo Black';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('~/assets/fonts/archivo-black.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Rubik';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url(~/assets/fonts/titulo-baner.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	@font-face {
+		font-family: 'Mono';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url(~/assets/fonts/taurus-mono.woff2) format('woff2');
+	}
+	@font-face {
+		font-family: 'Led';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url(~/assets/fonts/led-display.woff2) format('woff2');
+	}
+	html, body {
+		font-family: 'Archivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+</style>

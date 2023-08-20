@@ -1,11 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
-import Logo from "~/components/Logo.astro";
-import ToggleTheme from "~/components/common/ToggleTheme.astro";
-import ToggleMenu from "~/components/common/ToggleMenu.astro";
+import { Icon } from 'astro-icon/components';
+import Logo from '~/components/Logo.astro';
+import SocialNetworks from '~/components/widgets/SocialNetworks.astro';
+import MenuIcon from '~/components/widgets/MenuIcon.astro';
+import Infoheader from '~/components/widgets/Infoheader.astro';
 
-import { getHomePermalink } from "~/utils/permalinks";
-import { trimSlash, getAsset } from "~/utils/permalinks";
+
+import { getHomePermalink } from '~/utils/permalinks';
+import { trimSlash } from '~/utils/permalinks';
 
 interface Link {
   text?: string;
@@ -36,67 +38,86 @@ export interface Props {
 }
 
 const {
-  id = "header",
+  id = 'header',
   links = [],
-  actions = [],
   isSticky = false,
   isDark = false,
   isFullWidth = false,
-  showToggleTheme = false,
-  showRssFeed = false,
-  position = "center",
+  position = 'center',
 } = Astro.props;
 
-const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
+const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    "top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-page",
+    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-gradient-to-b from-principal-dark via-principal-dark to-principal',
   ]}
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between",
+      'relative py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between text-black',
       {
-        "max-w-7xl": !isFullWidth,
+        'max-w-6xl': !isFullWidth,
       },
     ]}
   >
-    <div class:list={[{ "mr-auto rtl:mr-0 rtl:ml-auto": position === "right" }, "flex justify-between"]}>
+    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
+      <input type="checkbox" id="menu" hidden class="peer" />
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
-        {/* <ToggleTheme /> */}
-        <ToggleMenu />
+        <input type="checkbox" id="menu" hidden class="peer" />
+        <label
+        for="menu"
+        class="relative z-50 md:hidden peer-checked:[&>.first]:hidden peer-checked:[&>.last]:block cursor-pointer transition hover:scale-110 peer-checked:rotate-90 rotate-0"
+        >
+        <MenuIcon />
+        </label>
       </div>
+      
     </div>
+    <div class="flex items-end md:flex to-principal">
+          <Infoheader />  
+    </div>
+  </div>
+
+  <div class="absolute inset-0"></div>
+  <div
+    class:list={[
+      'relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between',
+      {
+        'max-w-6xl': !isFullWidth,
+      },
+    ]}
+  >
     <nav
-      class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+      id="navbar" class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
+        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-2xl md:text-[0.9375rem] tracking-[0.01rem] font-semibold text-center text-md md:text-base md:justify-start [&>li>a]:opacity-80 [&>li>a:hover]:opacity-100 [&>li>a:hover]:underline"
       >
         {
           links.map(({ text, href, links }) => (
-            <li class={links?.length ? "dropdown" : ""}>
+            <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
                   <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
-                    {text} <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    {text}{' '}
+                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
                   <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
                           class:list={[
-                            "first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap",
-                            { "aw-link-active" : href2 === currentPath}
+                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap transition hover:underline-offset-8',
+                            { 'aw-link-active font-lg': href2 === currentPath },
                           ]}
                           href={href2}
                         >
@@ -109,8 +130,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
               ) : (
                 <a
                   class:list={[
-                    "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers",
-                    { "aw-link-active": href === currentPath }
+                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-centers',
+                    { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
                 >
@@ -122,41 +143,42 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
         }
       </ul>
     </nav>
-    <div
-      class:list={[
-        { "ml-auto rtl:ml-0 rtl:mr-auto": position === "left" },
-        "hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0",
-      ]}
-    >
-      <div class="items-center flex justify-between w-full md:w-auto">
-        <div class="flex">
-          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
-          {
-            showRssFeed && (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label="RSS Feed"
-                href={getAsset('/rss.xml')}
-              >
-                <Icon name="tabler:rss" class="w-5 h-5" />
-              </a>
-            )
-          }
-        </div>
-        {
-          actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
-              {actions.map(({ text, href, class: className }) => (
-                <a class:list={["btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm", className]} href={href}>
-                  <Fragment set:html={text} />
-                </a>
-              ))}
-            </span>
-          ) : (
-            ""
-          )
-        }
-      </div>
-    </div>
+    <SocialNetworks />
   </div>
 </header>
+<script type="module">
+  const menuCheckbox = document.getElementById("menu");
+  const mediaQuery = window.matchMedia("(min-width: 640px)"); // Breakpoint sm
+  const $navbar = document.querySelector("#navbar");
+
+  $navbar.querySelectorAll("a").forEach((anchor) => {
+      anchor.addEventListener("click", (_event) => {
+        if (document.body.style.overflowY === "hidden") {
+          hideOverFlow(false);
+        }
+      });
+    });
+  
+    /** @param {boolean} value */
+    function hideOverFlow(value) {
+      if (value) {
+        window.scrollTo(0, 0);
+        document.body.style.overflowY = "hidden";
+        $navbar.classList.remove("hidden");
+      } else {
+        document.body.style.overflowY = "auto";
+        $navbar.classList.add("hidden");
+      }
+    }
+  
+    menuCheckbox.addEventListener("change", (e) =>
+      e.target.checked ? hideOverFlow(true) : hideOverFlow(false)
+    );
+  
+    mediaQuery.addEventListener("change", (e) => {
+      if (e.matches) {
+        hideOverFlow(false);
+        menuCheckbox.checked = false;
+      }
+    });
+</script>

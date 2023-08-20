@@ -1,0 +1,134 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+
+const metadata = {
+    title: 'Adler — experto en todo tipo de bordado directamente sobre las prendas confeccionadas.',
+    ignoreTitleTemplate: true,
+};
+---
+  
+<Layout metadata={metadata}>
+    <main>
+        <Banner title="Servicio de bordado" img="slide-bg-02.jpg"/>
+        <main
+            class="relative max-w-7xl m-auto bg-white p-8 sm:p-20 sm:shadow-xl sm:rounded -mt-10 flex justify-center flex-col [&_p]:text-lg [&_p]:lg:text-xl [&_p]:text-marron-800">	   
+                <h2 class="font-title text-3xl mb-4 text-marron">Ofrecemos servicio de bordado computarizado</h2>
+                <div class="relative w-full">
+                    <section>
+                        <div
+                            class="mx-auto max-w-screen-xl py-8 lg:py-8">
+                            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                            <div class="relative hover:scale-125 h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full transition-all duration-300 cursor-pointer">
+                                <img
+                                alt="Party"
+                                src="/images/servicios/polo-adler-borado.jpg"
+                                class="absolute inset-0 h-full w-full object-cover"
+                                />
+                            </div>
+
+                            <div>
+                                <p class="mt-4 text-marron-600">
+                                <strong class="text-2xl">Servicio de Bordados computarizado plano</strong> en todo tipo de telas, con aplicados en todo tipo de telas. Gran capacidad de respuesta a los distintos requerimientos de nuestros clientes.
+                                </p>
+                                <p class="mt-4 text-marron-600">
+                                    <strong class="text-2xl font-bold sm:text-32xl space-y-2">Adler</strong> brinda un servicio de calidad   con responsabilidad y cuidado del medio ambiente.
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div
+                            class="mx-auto max-w-screen-xl py-8 lg:py-8">
+                            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                            <div class="relative hover:scale-125 h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full transition-all duration-300 cursor-pointer">
+                                <img
+                                alt="Party"
+                                src="/images/servicios/bordado-barcelona.jpg"
+                                class="absolute inset-0 h-full w-full object-cover"
+                                />
+                            </div>
+
+                            <div>
+                                <p class="mt-4 text-marron-600">
+                                <strong class="text-2xl font-bold sm:text-32xl space-y-2">Digitalizamos tu idea de bordado para ti</strong>
+                                tu idea necesita convertirse en un formato que nuestras máquinas puedan bordar. Si el archivo no está digitalizado, no puede bordarse. Por eso, <strong>Adler</strong> se encarga de este proceso por ti.
+                                </p>
+                                <p class="mt-4 text-marron-600">
+                                    Ponchado para Bordado, consiste en dieñar una imagen en corel draw y llevarlo a programa <strong>wilcom</strong> para su bordado computarizado.
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden mt-10">
+                            <div class="md:flex">
+                                <div class="md:shrink-0 fill marronscale hover:marronscale-0">
+                                    <img class="h-48 w-full object-cover md:h-full md:w-96" src="/images/servicios/maquina-de-bordar.jpg" alt="Modern building architecture">
+                                    </div>
+                                    <div class="p-8">
+                                    <div class="uppercase tracking-wide text-2xl font-semibold text-marron">Elige el tipo de bordado para tu prenda </div>
+                                    <p class="mt-2 text-slate-500">El bordado es una técnica de impresión versátil, elegante y resistente. Las prendas personalizadas con el bordado se le da un valor agregado a una marca, empresa o club.</p>
+                                    <p class="mt-4 text-marron-600">
+                                        Un pequeño bordado en la zona del corazón es una opción muy popular entre diseñadores y marcas de ropa para crear camisetas bordadas para venta.
+                                    </p>
+                                    <h3 class="text-2xl font-bold sm:text-3xl mt-8 text-marron">Los servicios que se ofrecen:</h3>
+                                    <ul class="mb-4 mt-2 space-y-4 text-left text-xl [&_li]:text-marron">
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Bordamos sobre polos, camisas, polares, toallas, chompas y cualquier tipo de tela.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Se realiza ponchado de imágenes y una impresión de prueba del ponchado.</span>
+                                        </li> 
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Realizamos las pruebas necesarias hasta la aprobación del cliente.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Realizamos presupuestos sin compromiso, asesorando sobre los tipos de Bordados y como realizarlo.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Picaje del diseño, realizando los retoques necesarios. Empleamos materiales de máxima calidad.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Entregas puntuales de la mercadería dentro del plazo acordado.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Se recoje y envía la mercadería al taller de procedencia tanto en Lima y regiones.</span>
+                                        </li>
+                                        <li class="flex items-center space-x-3">
+                                            <!-- Icon -->
+                                            <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                            <span>Precio x mayor a partir de 100 unidades.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+    </main>
+</Layout>
+<style>
+    ul li {
+        font-family: Archivo;
+    }
+</style>

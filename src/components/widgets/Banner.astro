@@ -1,0 +1,24 @@
+---
+const { title, img } = Astro.props
+
+let classBanner = img ?? 'slide-bg-02.jpg'
+---
+<section class={`relative bg-[url(/images/${classBanner})] bg-cover bg-center bg-no-repeat`}>
+    <div class="absolute inset-0 bg-gradient-to-r from-principal/25 bg-transparent to-marron/75"></div>
+
+        <div class="clasbanner relative mx-auto max-w-screen-xl py-20 lg:flex lg:h-1/5 lg:items-center astro-OVSDEJVS">
+            <div class="max-w-full text-center sm:text-left">
+            <h1 class="text-3xl font-extrabold sm:text-5xl text-white letras">
+                {title}
+            </h1>				
+            </div>
+        </div>
+</section>
+<style>
+	.clasbanner h1.letras {
+		font-family: Mono;
+	}
+	.clasbanner strong {
+		font-family: Led;
+	}
+</style>

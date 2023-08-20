@@ -6,15 +6,6 @@
   margin-top: 0;
 }
 
-@layer utilities {
-  .bg-page {
-    background-color: var(--aw-color-bg-page);
-  }
-  .bg-dark {
-    background-color: var(--aw-color-bg-page-dark);
-  }
-}
-
 @layer components {
   .text-page {
     color: var(--aw-color-text-page);
@@ -22,10 +13,6 @@
 
   .text-muted {
     color: var(--aw-color-text-muted);
-  }
-
-  .bg-light {
-    background-color: var(--aw-color-bg-page);
   }
 
   .btn {
@@ -42,12 +29,10 @@
 }
 
 #header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
   box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
   box-shadow: none;
 }
 /* #header.scroll > div:last-child {
@@ -84,4 +69,38 @@
 
 [data-aw-toggle-menu].expanded g > path:last-child {
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+.custom-shape-divider-bottom {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 127px;
+  transform: rotateY(180deg);
+}
+
+.clasbanner h1.letras {
+  font-family: Mono;
+}
+.clasbanner strong {
+  font-family: Led;
+}
+
+html, body {
+  font-family: 'Archivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.aw-link-active {
+  text-decoration: underline;
+  line-height: 2.5;
+  color: white !important;
+  font-weight: bold;
+  opacity: 1 !important;
 }

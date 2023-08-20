@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+
+const metadata = {
+    title: 'Adler — trabajos realizados',
+    ignoreTitleTemplate: true,
+};
+---
+  
+<Layout metadata={metadata}>
+    <main>
+        <Banner title="Trabajos" img="slide-bg-02.jpg"/>
+        <main
+            class="relative max-w-7xl m-auto bg-white p-8 sm:p-20 sm:shadow-xl sm:rounded -mt-10 flex justify-center flex-col [&_p]:text-lg [&_p]:lg:text-xl [&_p]:text-marron-800">	   
+                <h2 class="font-title text-3xl mb-4 text-marron">Nuestros trabajos</h2>            
+
+                <div class="relative w-full">
+                    <section class="text-marron-600 body-font">
+                        <div class="container px-5 py-10 mx-auto flex flex-wrap">
+                            <div class="flex flex-wrap md:-m-2 -m-1">
+                                <div class="flex flex-wrap w-1/2">
+                                    <div class="md:p-2 p-1 w-1/2">
+                                    <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 object-cover h-full object-center block" src="/images/gallery/bordado-jae.jpg">
+                                    </div>
+                                    <div class="md:p-2 p-1 w-1/2">
+                                    <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 object-cover h-full object-center block" src="/images/gallery/escudo-flor.jpg">
+                                    </div>
+                                    <div class="md:p-2 p-1 w-full">
+                                    <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 h-full object-cover object-center block" src="/images/gallery/flor.jpg">
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap w-1/2">
+                                    <div class="md:p-2 p-1 w-full">
+                                        <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 h-full object-cover object-center block" src="/images/gallery/mariposa.jpg">
+                                        </div>
+                                        <div class="md:p-2 p-1 w-1/2">
+                                        <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 object-cover h-full object-center block" src="/images/gallery/grench.jpg">
+                                    </div>
+                                    <div class="md:p-2 p-1 w-1/2">
+                                        <img alt="gallery" class="w-full hover:border-2 hover:border-principal hover:scale-125 object-cover h-full object-center block" src="/images/gallery/buho.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>                
+                </div>
+            </main>
+    </main>
+</Layout>

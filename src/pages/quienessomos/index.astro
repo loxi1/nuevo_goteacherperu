@@ -1,0 +1,87 @@
+---
+import Banner from '~/components/widgets/Banner.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+
+const metadata = {
+    title: 'Adler — que nos dedicamos al rubro textil de corte y confección de prendas de vestir, uniformes administrativos, empresariales e intitucionales para damas, caballeros y niños.',
+    ignoreTitleTemplate: true,
+};
+---
+  
+<Layout metadata={metadata}>
+    <main>
+        <Banner title="Quienes somos" img="slide-bg-02.jpg"/>
+        <main class="relative max-w-7xl m-auto bg-white p-8 sm:p-20 sm:shadow-xl sm:rounded -mt-10 flex justify-center flex-col [&_p]:text-lg [&_p]:lg:text-xl">
+            <h2 class="font-title text-3xl mb-4 text-marron-800">Nosotros</h2>
+            <section class="[&_p]:text-white">
+                <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="relative lg:py-16">
+                            <div class="relative h-64 sm:h-80 lg:h-full">
+                            <img
+                                alt="House"
+                                src="/images/quienessomos/quenes-somos.png"
+                                class="absolute inset-0 object-cover"
+                            />
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-center bg-marron">
+                            <span class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-marron-100"></span>
+
+                            <div class="p-8 sm:p-16 lg:p-24 text-white">
+                                <h2 class="text-2xl font-bold sm:text-3xl">
+                                    Somos una emprasa peruana
+                                </h2>
+
+                                <p class="mt-4 descripcionnosotros">
+                                    que nos dedicamos al rubro textil de corte y confección de prendas de vestir, uniformes administrativos, empresariales e intitucionales para damas, caballeros y niños.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="my-6 flex flex-col gap-12">
+                <section class="text-marron-600 body-font w-full">
+                    <div class="container mx-auto">
+                        <div class="flex items-center mx-auto border-b pb-10 mb-10 border-marron-200 sm:flex-row flex-col">
+                            <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-red-400 text-white flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-15 h-15">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                                <h2 class="text-marron-900 text-xl font-semibold mb-2">Misión</h2>
+                                <p class="leading-relaxed text-base">Es brindar el servicio de confección, cumpliendo estándares de calidad para satisfacer las necesidades de nuestros clientes con responsabilidad y eficiencia que permita el crecimiento de nuestra empresa y sus colaboradores.</p>
+                                
+                            </div>
+                            </div>
+                            <div class="flex items-center mx-auto border-b pb-10 mb-10 border-marron-200 sm:flex-row flex-col">
+                            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                                <h2 class="text-marron-900 text-xl font-semibold mb-2">Visión</h2>
+                                <p class="leading-relaxed text-base">Ser una empresa reconocida a nivel mundial por el servicio de calidad y el cumplimiento cabal de nuestras obligaciones, crecer en forma conjunta en base a la satisfacción de las espectativas de nuestros clientes.</p>
+                                
+                            </div>
+                            <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-blue-400 text-white flex-shrink-0">
+                                <svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg" class="w-14 h-14"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 5)"><path d="m8.5 11c3.1296136 0 5.9629469-1.83333333 8.5-5.5-2.5370531-3.66666667-5.3703864-5.5-8.5-5.5-3.12961358 0-5.96294692 1.83333333-8.5 5.5 2.53705308 3.66666667 5.37038642 5.5 8.5 5.5z"/><path d="m8.5 2c.18463928 0 .36593924.01429736.54285316.04184538-.02850842.148891-.04285316.30184762-.04285316.45815462 0 1.38071187 1.1192881 2.5 2.5 2.5.156307 0 .3092636-.01434474.4576252-.04178957.0280774.17585033.0423748.35715029.0423748.54178957 0 1.93299662-1.5670034 3.5-3.5 3.5-1.93299662 0-3.5-1.56700338-3.5-3.5s1.56700338-3.5 3.5-3.5z"/></g></svg>
+                            </div>
+                            </div>
+                            <div class="flex items-center mx-auto sm:flex-row flex-col">
+                            <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-400 text-white flex-shrink-0">
+                                <svg height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" class="w-14 h-14"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 4)"><path d="m13.5 0 3 4-8 10-8-10 3.009-4z"/><path d="m.5 4h16"/><path d="m5.5 4 3 10"/><path d="m11.5 4-3 10"/><path d="m3.509 0 1.991 4 3-4 3 4 2-4"/></g></svg>
+                            </div>
+                            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                                <h2 class="text-marron-900 text-xl font-semibold mb-2">Valores</h2>
+                                <p class="leading-relaxed text-base">Nuestra empresa se sustenta  en el accionar de sus integrantes con respeto, puntualidad, calidad, innovación y trabajo en equipo.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </main>
+</Layout>

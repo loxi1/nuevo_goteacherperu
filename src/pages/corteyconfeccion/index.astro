@@ -1,0 +1,73 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+
+const metadata = {
+    title: 'Adler — elabora prendas de vestir para Caballeros, Damas y Niños, con una gran variedad de estilos.',
+    ignoreTitleTemplate: true,
+};
+---
+  
+<Layout metadata={metadata}>
+    <main>
+        <Banner title="Corte y confeccion" img="slide-bg-02.jpg"/>
+        <main
+        class="relative max-w-7xl m-auto bg-white p-8 sm:p-20 sm:shadow-xl sm:rounded -mt-10 flex justify-center flex-col [&_p]:text-lg [&_p]:lg:text-xl [&_p]:text-marron-800">	   
+            <h2 class="font-title text-3xl mb-4 text-marron">Corte y confección</h2>
+            <div class="relative w-full">
+                <section>
+                    <div
+                        class="mx-auto max-w-screen-xl py-8 lg:py-8">
+                        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+                            <div class="relative hover:scale-125 h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full transition-all duration-300 cursor-pointer">
+                                <img
+                                alt="Party"
+                                src="/images/servicios/corte-confeccion.jpg"
+                                class="absolute inset-0 h-full w-full object-cover"
+                                />
+                            </div>
+
+                            <div>
+                                <p>
+                                En <strong class="text-2xl">Adler</strong> se elabora prendas de vestir para Caballeros, Damas y Niños, con una gran variedad de estilos como:
+                                </p>
+                                <ul class="mb-4 mt-2 space-y-4 text-left [&_li]:text-marron">
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Polo Box (Cuello camisero)</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Polo <span class="font-semibold text-marron-900 dark:text-white">T-Shirts</span> (Polo normal - cuello redondo)</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Thak <span class="font-semibold text-marron-900 dark:text-white">Top</span> (Polo manga cero)</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Shorts</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3">
+                                        <!-- Icon -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-principal dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <span>Entre otros</span>
+                                    </li>
+                                </ul>
+                                <p class="mt-4">
+                                También se elabora diseños de acuerdo a la necesidad del cliente. <strong> Nuestras prendas son hechas de telas 100%  algodón Tangüis y algodón pima peinado en telas como Jersey, Pique, Interlock, Rib, Jacquard y otros. </strong>
+                                </p>
+                                <p class="mt-4">
+                                Los modelos se desarrollan para todas las temporadas con una gran variedad de diseños en estampados y bordados con los mejores materiales en alta calidad. </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>                
+            </div>
+        </main>
+    </main>
+</Layout>

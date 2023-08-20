@@ -1,0 +1,55 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Banner from '~/components/widgets/Banner.astro';
+import Mapacorreo from '~/components/widgets/Mapacorreo.astro';
+import Contactanos from '~/components/widgets/Contactanos.astro';
+
+const metadata = {
+    title: 'Adler — Contáctanos y te respondemos a la brevedad posible',
+    ignoreTitleTemplate: true,
+};
+---
+  
+<Layout metadata={metadata}>
+    <main>
+        <Banner title="Contáctanos" img="slide-bg-02.jpg"/>
+        <main class="relative max-w-7xl m-auto bg-white p-8 sm:p-20 sm:shadow-xl sm:rounded -mt-10 flex justify-center flex-col [&_p]:text-lg [&_p]:lg:text-xl [&_p]:text-marron-800">	   
+            <h2 class="font-title text-3xl mb-4 text-marron">Horario de atención</h2>
+            <p class="mb-4">
+              <strong>Sólo se podrá acceder al recinto con acreditación o invitación.</strong> Horario de atención de lunes a viernes de 8.00 a. m. a 5.00 p. m. (horario
+              corrido).
+            </p>
+  
+            <hr />
+  
+            <section class="flex flex-col gap-6 mt-5">
+                <h2 class="font-title text-3xl mb-4 text-marron">Cómo llegar al taller</h2>
+  
+                <h3 class="font-bold text-2xl text-principal">Transporte Público</h3>
+                <p>
+                  <strong>Paradero:</strong> JR. LOS TERRAZOS F - 12 ASOC. INCA MANCO CAPAC
+                  PROG. LA BASILIA / SJL / LIMA.
+                </p>
+                <p>
+                  <strong>Desde estación del tren:</strong> Paradero 1 – L1 (Santa Rosa)
+                  – BASILIA | Lima.
+                </p>
+            </section>
+  
+            <div>
+              <p>
+                Para más información, escríbenos a: <a
+                  class="block text-principal"
+                  href="mailto:gsorozcop@gmail.com"
+                  target="_blank"
+                  rel="noopener norefferer"
+                >
+                  gsorozcop@gmail.com
+                </a>
+              </p>
+              <Contactanos/>
+            </div>          
+        </main>
+        <Mapacorreo />
+    </main>
+</Layout>

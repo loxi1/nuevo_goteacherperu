@@ -3,54 +3,68 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Caja from '~/components/widgets/Cajahome.astro';
-import Contactanos from '~/components/widgets/Contactanos.astro';
+import Lema from '~/components/widgets/Lema.astro';
 import Mapacorreo from '~/components/widgets/Mapacorreo.astro';
+import { headerData } from '~/navigation';
 
 const metadata = {
   title: 'Adler — Empresa de confianza',
   ignoreTitleTemplate: true,
 };
 ---
+
 <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
+    info={{
+      title: 'Somos una empresa',
+      bold: 'Peruana',
+      desc: 'que nos dedicamos al rubro textil de corte y confección de prendas de vestir.',
+    }}
     callToAction={{ text: 'Quienes somos', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:users' }}
     callToAction2={{ text: 'Servicios', href: '#features', icon: 'tabler:chart-bubble' }}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
-  >
-  </Hero>
-
-  <Caja />
-  <section class="bg-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Tu lo imaginas nosotros lo realizamos
-        </h2>
-
-        <p class="mt-4 text-gray-500 sm:text-xl">
-          Somos especialistas en diseño personalizado de ropa corporativa, deportiva y merchandising. Nuestro equipo profesional esta a tu disposición,para que puedas desarrollar un proyecto único, exclusivo y adaptado a la necesidades propias de tu empresa.
-        </p>
-        <div class="mt-10">
-          <Contactanos/>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    image={{ src: '~/assets/images/hero.png', alt: 'Adler confecciones' }}
+  />
+  <!-- Cajas de servicios ******************* -->
+  <Caja
+    url1={{
+      href: headerData.links[2].href,
+      title: 'Bordado computarizado',
+      desc: 'Adler es experto en todo tipo de bordado directamente sobre las prendas confeccionadas.',
+    }}
+    url2={{
+      href: headerData.links[3].href,
+      title: 'Corte y confección',
+      desc: 'Adler elabora prendas de vestir para Caballeros, Damas y Niños, con una gran variedad de estilos.',
+    }}
+    url3={{
+      href: headerData.links[4].href,
+      title: 'Trabajos',
+      desc: 'Adler a realizdo multiples diseños de bordados.',
+    }}
+    image1={{ src: '~/assets/images/cajas/caja-bordado-jae.jpg', alt: 'Bordado' }}
+    image2={{ src: '~/assets/images/cajas/disenio-confeccion.jpg', alt: 'Corte y confección' }}
+    image3={{ src: '~/assets/images/cajas/trabajos.jpg', alt: 'Trabajos' }}
+  />
+  <!-- Lema empresarial ******************* -->
+  <Lema
+    info={{
+      title: 'Tu lo imaginas nosotros lo realizamos',
+      desc: 'Somos especialistas en diseño personalizado de ropa corporativa, deportiva y merchandising. Nuestro equipo profesional esta a tu disposición,para que puedas desarrollar un proyecto único, exclusivo y adaptado a la necesidades propias de tu empresa.',
+    }}
+  />
+  <!-- Mapa y envio correo ******************* -->
   <Mapacorreo />
 </Layout>
 <script>
-  document.querySelector(".modal").addEventListener("click", function (e) {    
-      con_ffeti(this)
+  document.querySelector('.modal').addEventListener('click', function (e) {
+    con_ffeti(this);
   });
-  
-  function con_ffeti(tis)
-  {
-      party.confetti(tis, {
-          count: party.variation.range(20, 100).skew(2, 1),
-      });
+
+  function con_ffeti(tis) {
+    party.confetti(tis, {
+      count: party.variation.range(20, 100).skew(2, 1),
+    });
   }
-  </script>
+</script>

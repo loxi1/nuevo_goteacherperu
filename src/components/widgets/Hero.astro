@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 
 const {
+  info = await Astro.slots.render('info'),
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
 } = Astro.props;
@@ -12,15 +13,15 @@ const {
   </div>
   <div class="clasbanner relative mx-auto max-w-screen-xl py-32 lg:flex lg:h-5/6 lg:items-center">
     <div class="max-w-2xl text-center sm:text-left">
-      <h1 class="text-3xl font-extrabold sm:text-5xl text-white letras">
-        Somos una empresa
-        <strong class="block font-extrabold text-principal"> Peruana</strong>
-      </h1>
-
-      <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">
-        que nos dedicamos al rubro textil de corte y confección de prendas de vestir.
-      </p>
-
+      {
+        info && (
+        <h1 class="text-3xl font-extrabold sm:text-5xl text-white letras">
+          {info.title}
+          <strong class="block font-extrabold text-principal"> {info.bold}</strong>
+        </h1>
+        <p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">{info.desc}</p>
+        )
+      }
       <div class="mt-8 flex flex-wrap gap-4 text-center">
         {
           callToAction && (

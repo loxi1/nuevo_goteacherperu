@@ -1,3 +1,16 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const {
+    url1 = await Astro.slots.render('url1'),
+    url2 = await Astro.slots.render('url2'),
+    url3 = await Astro.slots.render('url3'),  
+    image1 = await Astro.slots.render('image1'),
+    image2 = await Astro.slots.render('image2'),
+    image3 = await Astro.slots.render('image3'),
+} = Astro.props;
+---
+
 <section class="lg:mb-16 w-full flex flex-col justify-center items-center bg-principal">
     <div class="custom-shape-divider-bottom">
         <svg width="100%" height="112" viewBox="0 0 1200 112" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6,16 +19,32 @@
     </div>
     <div class="max-w-6xl mx-auto px-6 md:px-12 xl:px-6">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white">
-                <a href="#" class="">
-                    <img class="rounded-t-lg" src="src/assets/images/cajas/caja-bordado-jae.jpg" alt="" />
-                </a>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white xxx">
+                {
+                    image1 && (
+                      <a href={url1.href} title={url1.title}>
+                        {typeof image1 === 'string' ? (
+                          <Fragment set:html={image1} />
+                        ) : (
+                          <Image
+                            class="mx-auto rounded-md w-full"
+                            widths={[400, 768, 1024, 2040]}
+                            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                            loading="eager"
+                            width={920}
+                            height={613}
+                            {...image1}
+                          />
+                        )}
+                      </a>
+                    )
+                }                
                 <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">Bordado computarizado</h5>
+                    <a href={url1.href} title={url1.title}>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">{url1.title}</h5>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adler es experto en todo tipo de bordado directamente sobre las prendas confeccionadas </p>
-                    <a href="/bordados" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{url1.desc}</p>
+                    <a href={url1.href} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
                         Leer más
                         <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
@@ -23,15 +52,31 @@
             </div>
 
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white">
-                <a href="#" class="">
-                    <img class="rounded-t-lg" src="src/assets/images/cajas/disenio-confeccion.jpg" alt="" />
-                </a>
+                {
+                    image2 && (
+                      <a href={url2.href} title={url2.title}>
+                        {typeof image2 === 'string' ? (
+                          <Fragment set:html={image2} />
+                        ) : (
+                          <Image
+                            class="mx-auto rounded-md w-full"
+                            widths={[400, 768, 1024, 2040]}
+                            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                            loading="eager"
+                            width={920}
+                            height={613}
+                            {...image2}
+                          />
+                        )}
+                      </a>
+                    )
+                }                
                 <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">Bordado computarizado</h5>
+                    <a href={url2.href} title={url2.title}>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">{url2.title}</h5>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adler elabora prendas de vestir para Caballeros, Damas y Niños, con una gran variedad de estilos.</p>
-                    <a href="/bordados" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{url2.desc}</p>
+                    <a href={url2.href} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
                         Leer más
                         <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
@@ -39,16 +84,32 @@
             </div>
 
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white">
-                <a href="#" class="">
-                    <img class="rounded-t-lg" src="src/assets/images/cajas/trabajos.jpg" alt="" />
-                </a>
+                {
+                    image1 && (
+                      <a href={url3.href} title={url3.title}>
+                        {typeof image3 === 'string' ? (
+                          <Fragment set:html={image3} />
+                        ) : (
+                          <Image
+                            class="mx-auto rounded-md w-full"
+                            widths={[400, 768, 1024, 2040]}
+                            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                            loading="eager"
+                            width={920}
+                            height={613}
+                            {...image3}
+                          />
+                        )}
+                      </a>
+                    )
+                }                
                 <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">Productos</h5>
+                    <a href={url3.href} title={url3.title}>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">{url3.title}</h5>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Adler a realizdo multiples diseños de bordados.</p>
-                    <a href="/bordados" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
-                    Leer más
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{url3.desc}</p>
+                    <a href={url3.href} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white focus:ring-4 focus:outline-none focus:ring-marron-300 dark:bg-marron-600 bg-marron hover:bg-black rounded-lg dark:hover:bg-marron-700 dark:focus:ring-marron-800">
+                        Leer más
                         <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>

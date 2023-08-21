@@ -81,7 +81,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
       
     </div>
-    <div class="flex items-end md:flex to-principal">
+    <div class="items-end to-principal" id="info_header">
           <Infoheader />  
     </div>
   </div>
@@ -143,14 +143,16 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         }
       </ul>
     </nav>
-    <SocialNetworks />
+    <div id="icon_header" class="hidden md:flex lg:flex">
+      <SocialNetworks />
+    </div>    
   </div>
 </header>
 <script type="module">
   const menuCheckbox = document.getElementById("menu");
   const mediaQuery = window.matchMedia("(min-width: 640px)"); // Breakpoint sm
   const $navbar = document.querySelector("#navbar");
-
+  
   $navbar.querySelectorAll("a").forEach((anchor) => {
       anchor.addEventListener("click", (_event) => {
         if (document.body.style.overflowY === "hidden") {

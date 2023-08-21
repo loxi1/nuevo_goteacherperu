@@ -1,23 +1,32 @@
 ---
 import Container from './Container.astro'
+
+const {
+    info = await Astro.slots.render('info'),
+	image = await Astro.slots.render('image')
+} = Astro.props
 ---
 
 <Container>
 	<section class='flex justify-center md:max-w-md mx-auto w-[85%]'>
-		<a
-			href='mailto:gsorozcop@gmail.com?cc=gsorozcop@gmail.com&subject=Informes'
-			title='¡Contactanos!'
-			class='hover:scale-110 transition-transform duration-300'
-			rel="noopener norefferer"
-		>
-			<img
-				alt='Contactanos'
-				class='w-full rounded'
-				src='src/assets/images/bg/btn-contacto.webp'
-				loading='lazy'
-				decoding='async'
-				fetchpriority='low'
-			/>
-		</a>
+		{
+			image.src && (
+				<a
+					href={info.href}
+					title={info.title}
+					class='hover:scale-110 transition-transform duration-300'
+					rel="noopener norefferer"
+				>
+				<img
+					alt={image.alt}
+					class='w-full rounded'
+					src={image.src}
+					loading='lazy'
+					decoding='async'
+					fetchpriority='low'
+				/>
+			  </a>
+			)
+		}		
 	</section>
 </Container>

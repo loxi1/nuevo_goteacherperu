@@ -52,7 +52,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-gradient-to-b from-principal-dark via-principal-dark to-principal',
+    'top-0 z-40 flex-none mx-auto w-full border-b border-marron-50/0 transition-[opacity] ease-in-out bg-gradient-to-b from-principal-dark via-principal-dark to-principal',
   ]}
   {...id ? { id } : {}}
 >
@@ -116,7 +116,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap transition hover:underline-offset-8',
+                            'first:rounded-t last:rounded-b md:hover:bg-marron-100 hover:text-link dark:hover:text-white dark:hover:bg-marron-700 py-2 px-5 block whitespace-no-wrap transition hover:underline-offset-8',
                             { 'aw-link-active font-lg': href2 === currentPath },
                           ]}
                           href={href2}

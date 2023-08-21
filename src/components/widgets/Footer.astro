@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
-
 interface Link {
   text?: string;
   href?: string;
@@ -24,7 +22,7 @@ export interface Props {
 const { socialLinks = [], links = [], theme = 'light' } = Astro.props;
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative bg-gradient-to-b page-footer from-marron via-marron to-principal border-t border-gray-200 dark:border-slate-800 not-prose']}>
+<footer class:list={[{ dark: theme === 'dark' }, 'relative bg-gradient-to-b page-footer from-marron via-marron to-principal border-t border-marron-200 dark:border-slate-800 not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
@@ -42,39 +40,19 @@ const { socialLinks = [], links = [], theme = 'light' } = Astro.props;
             />
           </a>
         </div>
-        <div class="text-sm text-muted hidden sm:flex md:flex">
-          {
-            socialLinks?.length ? (
-              <ul class="flex mb-4 text-white md:text-marron-100 sm:text-marron-100 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
-                {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-                  <li>
-                    <a
-                      class="text-mutedtext-gray-400 hover:bg-white dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-white dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                      aria-label={ariaLabel}
-                      href={href}
-                    >
-                      {icon && <Icon name={icon} class="w-5 h-5 text-white" />}
-                      <Fragment set:html={text} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              ''
-            )
-          }
+        <div class="text-sm text-muted hidden sm:flex md:flex">          
         </div>
       </div>
       {
         links.map(({ title, links }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
+            <div class="dark:text-marron-300 font-medium mb-2">{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-sm">
+              <ul class="text-lg">
                 {links.map(({ text, href, ariaLabel }) => (
                   <li class="mb-2">
                     <a
-                      class="text-white text-lg hover:text-white hover:underline lg:text-gray-400 md:text-gray-400 transition duration-150 ease-in-out"
+                      class="text-white text-lg hover:text-white hover:underline lg:text-marron-400 md:text-marron-400 transition duration-150 ease-in-out"
                       href={href}
                       aria-label={ariaLabel}
                     >

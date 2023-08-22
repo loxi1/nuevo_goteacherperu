@@ -4,6 +4,17 @@ import Contactanos from '~/components/widgets/Contactanos.astro';
 const { info = await Astro.slots.render('info'), image = await Astro.slots.render('image') } = Astro.props;
 ---
 
+<div class="custom-shape-divider-bottom-1665696614">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    class="custom-bg-blanco"
+  >
+    <path d="M1200 112L0 8.48V-8H1200V112Z" class="custom-bg-marron"></path>
+  </svg>
+</div>
 <section class="bg-marron">
   <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
@@ -19,7 +30,7 @@ const { info = await Astro.slots.render('info'), image = await Astro.slots.rende
         <Contactanos
           info={{
             href: 'mailto:gsorozcop@gmail.com?cc=gsorozcop@gmail.com&subject=Informes',
-            title: '¡Contactanos!'
+            title: '¡Contactanos!',
           }}
           image={image}
         />
@@ -27,3 +38,15 @@ const { info = await Astro.slots.render('info'), image = await Astro.slots.rende
     </div>
   </div>
 </section>
+
+<div class="custom-shape-divider-top-1665696661 w-full">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    class="custom-bg-blanco"
+  >
+    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="custom-bg-marron"></path>
+  </svg>
+</div>

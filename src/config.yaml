@@ -1,6 +1,6 @@
 site:
   name: ConfeccionesAdler
-  site: 'https://beta.confeccionesadler.com'
+  site: 'https://confeccionesadler.com'
   base: '/'
   trailingSlash: false
 

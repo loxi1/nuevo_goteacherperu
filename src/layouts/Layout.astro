@@ -40,6 +40,18 @@ const { language, textDirection } = I18N_CONFIG;
 
 	<script type="text/javascript">
 		emailjs.init('4Z1uuF9-3Cymg4roE')
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof(url) != 'undefined') {
+					window.location = url;
+				}
+			};
+			gtag('event', 'conversion', {
+				'send_to': 'AW-947270274/bvTmCNqS3vMYEILl2MMD',
+				'event_callback': callback
+			});
+			return false;
+		}
 	</script>
   </head>
 

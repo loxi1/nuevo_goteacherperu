@@ -15,14 +15,14 @@
     </div>
 
     <div class="px-4 py-16 sm:px-6 lg:col-span-2 lg:px-8">
-        <form id="envio-correo" class="w-full h-full">
+        <form id="envio-correo" class="w-full h-full [&_input]:text-marron">
             <div class="flex flex-col px-7 sm:pl-7 py-2 bg-slate-200  w-full rounded-t-3xl border-8 border-marron">
                 <div class="text-xl font-semibold">
                     <h1 class="text-3xl text-marron">Enviar mensaje</h1>
                 </div>
                 <div class="flex flex-col md:flex-row ">
                     <div class="">
-                        <input type="text" name="from_name" id="from_name" placeholder="Nombres" class="w-full border-2 border-white px-3 py-1 text-xl outline-none placeholder:text-black placeholder:opacity-40 mt-4 mr-2 focus:border-marron-500 duration-200 ease-in-out rounded-lg" required>
+                        <input type="text" name="from_name" id="from_name" placeholder="Nombres" class="w-full border border-white px-3 py-1 text-xl outline-none placeholder:text-black placeholder:opacity-40 mt-4 mr-2 focus:border-marron-500 duration-200 ease-in-out rounded-lg" required>
                     </div>
                     <div class="">
                         <input type="text" name="from_apellidos" id="from_apellidos" placeholder="Apellidos" class="w-full md:w-[95%] border-2 border-white px-3 py-1 text-xl outline-none placeholder:text-black placeholder:opacity-40 mt-4 md:ml-2 focus:border-marron-500 duration-200 ease-in-out rounded-lg">
@@ -33,7 +33,7 @@
                 
                 <input type="number" name="num_celular" id="num_celular" placeholder="917584188" class="w-full border-2 border-white text-xl outline-none px-3 py-1 placeholder:text-black placeholder:opacity-40 mt-4 focus:border-marron-500 duration-200 ease-in-out rounded-lg" max="999999999" min="900000000" required>
                 
-                <textarea id="message" name="message" placeholder="Escribir un mensaje" class="mb-3 w-full border-2 border-white h-44 text-xl outline-none placeholder:text-black placeholder:opacity-40 focus:border-marron-500 py-1 px-3 mt-4 resize-none leading-6 duration-200 ease-in-out rounded-lg" required></textarea>
+                <textarea id="message" name="message" placeholder="Escribir un mensaje" class="mb-3 text-marron w-full border-2 border-white h-44 text-xl outline-none placeholder:text-black placeholder:opacity-40 focus:border-marron-500 py-1 px-3 mt-4 resize-none leading-6 duration-200 ease-in-out rounded-lg" required></textarea>
                 
                 <button class="bg-marron hover:bg-marron-500 w-full font-semibold text-white uppercase px-24 py-5 text-center mx-auto my-3 rounded-lg rounded-bl-lg text-2xl" id="btn-contact">
                     <svg id="spinerflecha" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="inline bi bi-arrow-repeat animate-spin" viewBox="0 0 16 16">
@@ -42,6 +42,48 @@
                     </svg> <span id="text-enviar">ENVIAR</span>
                 </button>
             </div>
-        </form>  
+        </form>
+        <a class="hidden sendthank" href="/gracias">gracias</a>
     </div>
 </section>
+
+<script>
+    const btn = document.getElementById('btn-contact');
+    const txt = document.getElementById('text-enviar');
+    const spinerflecha = document.getElementById('spinerflecha')
+    const input_nombre = document.getElementById("from_name")
+    const input_correo = document.getElementById("email_id")
+    const input_celular = document.getElementById("num_celular")
+    const input_message = document.getElementById("message")
+
+    document.getElementById('envio-correo')
+    .addEventListener('submit', function(event) {
+        event.preventDefault();
+        let envio = false
+        let msn = 'Falso'
+        
+        let nombre = input_nombre.value;
+        let correo = input_correo.value;
+        let celular = input_celular.value;
+        let message = input_message.value;
+
+        txt.html = 'Enviando...';
+        spinerflecha.classList.remove('hidden');
+        btn.classList.remove('bg-marron')
+        btn.classList.add('bg-marron-500')
+        
+
+        const serviceID = 'default_service';
+        const templateID = 'template_q0oth5i';
+
+        emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.value = 'Enviar';
+            document.querySelector("a.sendthank").click()
+        }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+        });
+        
+    });
+</script>

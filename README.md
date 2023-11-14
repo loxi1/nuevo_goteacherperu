@@ -100,7 +100,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'Example'
+    default: 'Confecciones Adler'
     template: '%s — Example'
   description: 'This is the default meta description of Example website'
   robots:

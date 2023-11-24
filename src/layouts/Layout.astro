@@ -37,8 +37,9 @@ const { language, textDirection } = I18N_CONFIG;
     <Analytics />
 	<script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+	
 	<script type="text/javascript">
+		gtag('event', 'conversion', {'send_to': 'AW-947270274/6uFKCLuu1_kYEILl2MMD'});
 		emailjs.init('4Z1uuF9-3Cymg4roE')
 		function gtag_report_conversion(url) {
 			var callback = function () {
@@ -47,7 +48,7 @@ const { language, textDirection } = I18N_CONFIG;
 				}
 			};
 			gtag('event', 'conversion', {
-				'send_to': 'AW-947270274/bvTmCNqS3vMYEILl2MMD',
+				'send_to': 'AW-947270274/6uFKCLuu1_kYEILl2MMD',
 				'event_callback': callback
 			});
 			return false;

@@ -35,11 +35,19 @@ const { language, textDirection } = I18N_CONFIG;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-947270274"></script>
 	<script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	
 	<script type="text/javascript">
-		gtag('event', 'conversion', {'send_to': 'AW-947270274/6uFKCLuu1_kYEILl2MMD'});
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'AW-947270274');
+
+		gtag('event', 'conversion', {'send_to': 'AW-947270274/LrvICO7M1_kYEILl2MMD'});
 		emailjs.init('4Z1uuF9-3Cymg4roE')
 		function gtag_report_conversion(url) {
 			var callback = function () {
@@ -48,7 +56,7 @@ const { language, textDirection } = I18N_CONFIG;
 				}
 			};
 			gtag('event', 'conversion', {
-				'send_to': 'AW-947270274/6uFKCLuu1_kYEILl2MMD',
+				'send_to': 'AW-947270274/LrvICO7M1_kYEILl2MMD',
 				'event_callback': callback
 			});
 			return false;

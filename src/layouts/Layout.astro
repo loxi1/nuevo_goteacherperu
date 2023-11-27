@@ -47,8 +47,8 @@ const { language, textDirection } = I18N_CONFIG;
 
 		gtag('config', 'AW-947270274');
 		function gtag_report_conversion(url) {
-			alert(url)
-			var callback = function () {
+			alert(url);
+			let callback = function () {
 				if (typeof(url) != 'undefined') {
 					window.location = url;
 				}

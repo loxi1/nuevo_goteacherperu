@@ -48,6 +48,7 @@ const { language, textDirection } = I18N_CONFIG;
 
 		emailjs.init('4Z1uuF9-3Cymg4roE')
 		function gtag_report_conversion(url) {
+			console.log(url)
 			var callback = function () {
 				if (typeof(url) != 'undefined') {
 					window.location = url;

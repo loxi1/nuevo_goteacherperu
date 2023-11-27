@@ -41,16 +41,12 @@ const { language, textDirection } = I18N_CONFIG;
 	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	
 	<script type="text/javascript">
-		window.dataLayer = window.dataLayer || []; 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'AW-947270274'); 
 
-		emailjs.init('4Z1uuF9-3Cymg4roE');
-
+		gtag('config', 'AW-947270274');
+		emailjs.init('4Z1uuF9-3Cymg4roE')
 		function gtag_report_conversion(url) {
 			alert(url)
 			var callback = function () {
@@ -60,8 +56,6 @@ const { language, textDirection } = I18N_CONFIG;
 			};
 			gtag('event', 'conversion', {
 				'send_to': 'AW-947270274/BcHSCI2Hm_oYEILl2MMD',
-				'value': 1.0,
-				'currency': 'USD',
 				'event_callback': callback
 			});
 			return false;

@@ -41,14 +41,18 @@ const { language, textDirection } = I18N_CONFIG;
 	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	
 	<script type="text/javascript">
-		 window.dataLayer = window.dataLayer || []; 
-		 function gtag(){dataLayer.push(arguments);} 
-		 gtag('js', new Date());
-		 gtag('config', 'AW-947270274'); 
+		window.dataLayer = window.dataLayer || []; 
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 
-		emailjs.init('4Z1uuF9-3Cymg4roE')
+		gtag('js', new Date());
+		gtag('config', 'AW-947270274'); 
+
+		emailjs.init('4Z1uuF9-3Cymg4roE');
+
 		function gtag_report_conversion(url) {
-			console.log(url)
+			alert(url)
 			var callback = function () {
 				if (typeof(url) != 'undefined') {
 					window.location = url;

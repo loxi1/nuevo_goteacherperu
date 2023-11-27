@@ -46,7 +46,6 @@ const { language, textDirection } = I18N_CONFIG;
 		gtag('js', new Date());
 
 		gtag('config', 'AW-947270274');
-		emailjs.init('4Z1uuF9-3Cymg4roE')
 		function gtag_report_conversion(url) {
 			alert(url)
 			var callback = function () {
@@ -60,6 +59,8 @@ const { language, textDirection } = I18N_CONFIG;
 			});
 			return false;
 		}
+
+		emailjs.init('4Z1uuF9-3Cymg4roE');
 	</script>
   </head>
 
